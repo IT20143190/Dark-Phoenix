@@ -1,13 +1,3 @@
 <resources>
-    <string name="app_name">petClinic</string>
-    <string name="invalide_name">Please Enter Valid Name</string>
-    <string name="invalide_contact">Please Enter a Valid Number</string>
-    <string name="invalid_email">Please Enter Valid Email Address</string>
-    <string name="invalide_type">Please Enter Type of Pet</string>
-    <string name="invalide_age">Please Enter Pet \'s Age</string>
-    <string name="invalide_image">Please Enter Pet\'s Image</string>
-    <string name="invalide_owner">Please Enter Owner\'s Name</string>
-    <string name="invalide_city">Please Enter a City</string>
-    <string name="invalide_pname">Please Insert Valid Name</string>
-    <string name="invalid_mail">Please Insert Valid Email</string>
+    <string name="app_name">test</string>
 </resources>
