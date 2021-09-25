@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.FirebaseDatabase;
@@ -18,6 +19,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class AddActivity extends AppCompatActivity {
+
+
 
     EditText title,age,breed,gender,phone,price,purl;
     Button btnAdd,btnBack;
@@ -34,6 +37,12 @@ public class AddActivity extends AppCompatActivity {
         phone = (EditText)findViewById(R.id.txtPhone);
         price = (EditText)findViewById(R.id.txtPrice);
         purl = (EditText)findViewById(R.id.txtImageUrl);
+
+
+
+
+
+
 
 
         btnAdd = (Button)findViewById(R.id.btnAdd);
