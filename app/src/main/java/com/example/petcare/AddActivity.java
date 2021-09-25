@@ -35,6 +35,7 @@ public class AddActivity extends AppCompatActivity {
         price = (EditText)findViewById(R.id.txtPrice);
         purl = (EditText)findViewById(R.id.txtImageUrl);
 
+
         btnAdd = (Button)findViewById(R.id.btnAdd);
         btnBack = (Button)findViewById(R.id.btnBack);
 
