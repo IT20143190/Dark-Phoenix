@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Pet care</string>
+    <string name="err_tel"> Enter the valid phone no</string>
+    <string name="err_bre"> Enter the Breed</string>
 </resources>
