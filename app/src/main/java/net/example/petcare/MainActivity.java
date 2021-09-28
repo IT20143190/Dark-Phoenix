@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             resendCode.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(final View v) {
-
+//Verification Email
                     user.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
