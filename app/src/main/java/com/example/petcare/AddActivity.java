@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.service.autofill.RegexValidator;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.FirebaseDatabase;
@@ -46,15 +48,22 @@ public class AddActivity extends AppCompatActivity {
         btnAdd = (Button)findViewById(R.id.btnAdd);
         btnBack = (Button)findViewById(R.id.btnBack);
 
-        awesomeValidation.addValidation(AddActivity.this, R.id.txtPhone, "^[0-9]{10}$", R.string.err_tel);
+        //Validation
+        awesomeValidation.addValidation(AddActivity.this, R.id.txtAge, RegexTemplate.NOT_EMPTY, R.string.err_age);
         awesomeValidation.addValidation(AddActivity.this, R.id.txtBreed, "[a-zA-Z\\s]+", R.string.err_bre);
+        awesomeValidation.addValidation(AddActivity.this, R.id.txtPhone, "^[0-9]{10}$", R.string.err_tel);
+        awesomeValidation.addValidation(AddActivity.this, R.id.txtPrice, RegexTemplate.NOT_EMPTY, R.string.err_price);
+
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertData();
-                clearAll();
-
+                if (awesomeValidation.validate()) {
+                    insertData();
+                    clearAll();
+                }else {
+                    Toast.makeText(getApplicationContext(), "Validation Failed", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
@@ -71,7 +80,6 @@ public class AddActivity extends AppCompatActivity {
     private void insertData()
     {
 
-        if (awesomeValidation.validate()) {
             Map<String, Object> map = new HashMap<>();
             map.put("title", title.getText().toString());
             map.put("age", age.getText().toString());
@@ -96,7 +104,7 @@ public class AddActivity extends AppCompatActivity {
                             Toast.makeText(AddActivity.this, "Error While Inserting Data", Toast.LENGTH_SHORT).show();
                         }
                     });
-        }
+
     }
 
     private void clearAll()
